@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using UniRx;
 using UnityEngine;
 
 public class Dummy : MonoBehaviour, IDamageable
@@ -11,21 +13,28 @@ public class Dummy : MonoBehaviour, IDamageable
     [SerializeField]
     Collider headCollider;
     Coroutine coroutine;
-    public void TakeShoot()
+    private IDisposable _takeShootStream;
+
+    private void Start()
     {
-        Debug.Log("Bull's eye!");
-        if (health > 0)
-        {
-            animator.SetTrigger("Hit");
-            health--;
-        }
-        else
-        {
+        _takeShootStream = Observable.EveryUpdate()
+        .Where(_ => health <= 0)
+        .Subscribe(_ => {
             animator.SetBool("Die", true);
             dummyCollider.enabled = false;
             headCollider.enabled = false;
-            if(coroutine == null)
+            if (coroutine == null)
                 coroutine = StartCoroutine(ReturnToAlive());
+        });
+    }
+
+    public void TakeShoot()
+    {
+        Debug.Log("Bull's eye!");
+        if (!animator.GetBool("Die"))
+        {
+            animator.SetTrigger("Hit");
+            health--;
         }
     }
     public void TakeHeadShoot()

@@ -3,44 +3,51 @@ using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using WebSocketSharp;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    TMP_InputField playerName;
-    [SerializeField]
-    TMP_InputField roomName;
-    [SerializeField]
-    TextMeshProUGUI statusText;
-    [SerializeField]
-    Button StartGame;
+    UIDocument uIDocument;
 
-    private void Start()
+
+    private TextField _playerNameField;
+    private TextField _roomNameField;
+    private UnityEngine.UIElements.Button _startGameButton;
+
+    void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
-        StartGame.onClick.AddListener(JoinRoom);
-        StartGame.interactable = false;
+        var root = uIDocument.rootVisualElement;
+
+        _playerNameField = root.Q<TextField>("PlayerNameField");
+        _roomNameField = root.Q<TextField>("RoomNameField");
+        _startGameButton = root.Q<UnityEngine.UIElements.Button>("StartGameButton");
+
+        _startGameButton.enabledSelf = false;
+
+        _startGameButton.clicked += JoinRoom;
     }
+
     public override void OnConnectedToMaster()
     {
-        StartGame.interactable = true;
+        _startGameButton.enabledSelf = true;
+        Debug.Log("Connected To Master");
     }
     private void JoinRoom()
     {
-        if (string.IsNullOrEmpty(playerName.text))
+        if (string.IsNullOrEmpty(_playerNameField.text))
         {
-            statusText.text = "Enter nickname!";
             return;
         }
 
-        if (string.IsNullOrEmpty(roomName.text))
+        if (string.IsNullOrEmpty(_roomNameField.text))
         {
-            statusText.text = "Enter room name!";
             return;
         }
-        PhotonNetwork.NickName = playerName.text;
-        PhotonNetwork.JoinOrCreateRoom(roomName.text,
+        PhotonNetwork.NickName = _playerNameField.text;
+        PhotonNetwork.JoinOrCreateRoom(_roomNameField.text,
             new RoomOptions { MaxPlayers = 4 }, TypedLobby.Default);
     }
 
