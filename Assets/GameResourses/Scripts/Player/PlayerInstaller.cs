@@ -1,7 +1,7 @@
 using Photon.Pun;
 using Zenject;
 
-public class ProjectInstaller : MonoInstaller
+public class PlayerInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
@@ -11,7 +11,7 @@ public class ProjectInstaller : MonoInstaller
             Container.Bind<IPlayerInput>().To<PlayerInputPC>().AsSingle();
 #elif UNITY_ANDROID || UNITY_IOS
         if (photonView.IsMine)
-        //Container.Bind<IPlayerInput>().To<MobilePlayerInput>().AsSingle();
+        Container.Bind<IPlayerInput>().To<MobilePlayerInput>().AsSingle();
 #else
         if (photonView.IsMine)
             Container.Bind<IPlayerInput>().To<PlayerInputPC>().AsSingle();

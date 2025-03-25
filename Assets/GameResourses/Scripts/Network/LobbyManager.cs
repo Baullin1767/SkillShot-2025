@@ -42,7 +42,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = playerName.text;
         PhotonNetwork.JoinOrCreateRoom(roomName.text,
             new RoomOptions { MaxPlayers = 4 }, TypedLobby.Default);
-        PhotonNetwork.LoadLevel(1);
+    }
 
+    public override void OnJoinedRoom()
+    {
+        PhotonNetwork.LoadLevel(1);
     }
 }
