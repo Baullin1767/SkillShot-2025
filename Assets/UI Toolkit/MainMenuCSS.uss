@@ -1,0 +1,60 @@
+.text_field {
+    font-size: 40px;
+    -unity-text-align: middle-center;
+    height: 10%;
+    width: 35%;
+    min-width: 30%;
+    min-height: 9%;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-color: rgba(15, 60, 80, 0.35);
+    opacity: 1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-color: rgba(0, 0, 0, 0);
+    margin-top: 60px;
+    background-image: none;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/GameResourses/Fonts/JumpersSuperItalic-ywzJZ.ttf?fileID=12800000&guid=53b3d3de93df2ad419df580e6f7a3406&type=3#JumpersSuperItalic-ywzJZ");
+    text-shadow: -10px 15px 0 rgb(0, 0, 0);
+    padding-left: 10px;
+    -unity-text-outline-width: 2px;
+    border-right-width: 0;
+    align-items: stretch;
+    flex-direction: row;
+    flex-shrink: 1;
+}
+
+.button {
+    font-size: 60px;
+    -unity-text-align: middle-center;
+    width: 19%;
+    min-width: 19%;
+    height: 9%;
+    min-height: 12%;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-top: 0;
+    background-color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/GameResourses/Fonts/JumpersSuperItalic-ywzJZ.ttf?fileID=12800000&guid=53b3d3de93df2ad419df580e6f7a3406&type=3#JumpersSuperItalic-ywzJZ");
+    color: rgb(255, 255, 255);
+}
+
+.lable {
+    font-size: 190px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/GameResourses/Fonts/JumpersSuperItalic-ywzJZ.ttf?fileID=12800000&guid=53b3d3de93df2ad419df580e6f7a3406&type=3#JumpersSuperItalic-ywzJZ");
+    text-shadow: -15px 10px 0 rgb(0, 0, 0);
+    background-color: rgba(0, 5, 58, 0.37);
+}
