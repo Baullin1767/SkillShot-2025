@@ -28,6 +28,11 @@ public class Dummy : MonoBehaviour, IDamageable
         });
     }
 
+    private void OnDestroy()
+    {
+        _takeShootStream?.Dispose();
+    }
+
     public void TakeShoot()
     {
         Debug.Log("Bull's eye!");

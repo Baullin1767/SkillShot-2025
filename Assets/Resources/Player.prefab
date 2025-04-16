@@ -481,6 +481,10 @@ PrefabInstance:
       propertyPath: m_SynchronizeAngularVelocity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6064205825797921264, guid: fdcee8db5354e304d9667d5198802f37, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7008137319379646878, guid: fdcee8db5354e304d9667d5198802f37, type: 3}
       propertyPath: m_Name
       value: Weapon Root

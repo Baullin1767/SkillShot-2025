@@ -1,5 +1,6 @@
 using Photon.Pun;
 using System;
+using System.Threading.Tasks;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -16,14 +17,15 @@ public class WeaponShooter : MonoBehaviourPun
     [SerializeField] private float fireRate = 5;
 
     [SerializeField] private LineRenderer lineRenderer;
-    private IPlayerInput _input;
-    private IDisposable _shootStream;
 
     [Inject]
-    public void Construct(IPlayerInput input)
-    {
-        _input = input;
-    }
+    private IPlayerInput _input;
+
+    [Inject]
+    private ScoreCounter _scoreCounter;
+
+    private IDisposable _shootStream;
+
     private void Start()
     {
         _shootStream = Observable.EveryUpdate()
@@ -64,9 +66,15 @@ public class WeaponShooter : MonoBehaviourPun
             if (target != null)
             {
                 if (hit.collider.name.Contains("head"))
+                {
                     target.TakeHeadShoot();
+                    _scoreCounter.AddPoints(5);
+                }
                 else
+                {
                     target.TakeShoot();
+                    _scoreCounter.AddPoints(1);
+                }
             }
             if (hitEffect != null)
             {

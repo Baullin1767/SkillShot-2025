@@ -15,8 +15,6 @@ public class PlayerCamera : MonoBehaviourPun
 
     private IPlayerInput _input;
 
-    private Vector3 currentVelocity;
-
     [Inject]
     public void Construct(IPlayerInput input)
     {

@@ -1,10 +1,10 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/MainMenuCSS.uss?fileID=7433441132597879392&amp;guid=1882938a470b40946b4a734798ec835b&amp;type=3#MainMenuCSS" />
     <engine:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/GameResourses/Art/MainMenu%20BG.png?fileID=2800000&amp;guid=fadc7d5a9da88e34281f509be58571ee&amp;type=3#MainMenu BG&quot;);">
-        <engine:TextField label="Room Name" name="RoomNameField" class="text_field" style="-unity-text-align: middle-left; margin-top: 293px; padding-left: 65px;" />
+        <engine:TextField label="Room Name" name="RoomNameField" enabled="true" class="text_field" style="-unity-text-align: middle-left; margin-top: 293px; padding-left: 65px; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-text-outline-color: rgb(0, 0, 0);" />
         <engine:TextField label="Player Name" name="PlayerNameField" class="text_field" style="padding-left: 10px;" />
         <engine:Button text="Play" name="StartGameButton" class="button" style="margin-top: 71px; background-image: url(&quot;project://database/Assets/Additional%20Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300016&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#button_pushed&quot;); background-color: rgba(255, 255, 255, 0);" />
-        <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Additional%20Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300002&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window1&quot;); margin-left: 50px; margin-right: 50px; margin-top: 41px;">
+        <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Additional%20Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300002&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#window1&quot;); margin-left: 50px; margin-right: 50px; margin-top: 41px; transform-origin: bottom;">
             <engine:Label text="Skill Shoot 2025" class="lable" style="margin-bottom: 0; margin-top: 65px; background-color: rgba(255, 255, 255, 0); background-image: none; background-size: 100px 100%; margin-left: 0; margin-right: 30px; font-size: 180px;" />
         </engine:VisualElement>
     </engine:VisualElement>

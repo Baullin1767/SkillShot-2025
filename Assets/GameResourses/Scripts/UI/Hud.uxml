@@ -1,0 +1,13 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GameSceneCSS.uss?fileID=7433441132597879392&amp;guid=1487300da612da4428a43cc9d61ce2ea&amp;type=3#GameSceneCSS" />
+    <engine:VisualElement name="Background" style="flex-grow: 1; background-image: none;">
+        <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <engine:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Additional%20Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300014&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#button1&quot;); margin-bottom: 840px; margin-left: 840px; margin-right: 388px;">
+                <engine:Label text="0" name="Score" class="text_field" style="transform-origin: center; margin-top: 110px; font-size: 150px; padding-left: 0; margin-left: 0; margin-right: 0; padding-right: 20px;" />
+            </engine:VisualElement>
+            <engine:VisualElement name="VisualElement" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Additional%20Assets/Sci-Fi%20UI/_SciFi_GUISkin_/atlas.png?fileID=21300014&amp;guid=56d84991286850f428b4e7df0cca7380&amp;type=3#button1&quot;); margin-bottom: 897px; margin-left: 0; margin-right: 0;">
+                <engine:Label text="00:00" name="SessionTimer" class="text_field" style="transform-origin: center; margin-top: 79px; font-size: 100px; padding-left: 0; margin-left: 0; margin-right: 0; padding-right: 20px;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

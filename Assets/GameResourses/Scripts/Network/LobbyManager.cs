@@ -1,31 +1,30 @@
 using Photon.Pun;
 using Photon.Realtime;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
-using WebSocketSharp;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    [SerializeField]
     UIDocument uIDocument;
 
 
     private TextField _playerNameField;
     private TextField _roomNameField;
-    private UnityEngine.UIElements.Button _startGameButton;
+    private Button _startGameButton;
 
     void Start()
     {
+        uIDocument = FindAnyObjectByType<UIDocument>();
+
         PhotonNetwork.ConnectUsingSettings();
         var root = uIDocument.rootVisualElement;
 
         _playerNameField = root.Q<TextField>("PlayerNameField");
         _roomNameField = root.Q<TextField>("RoomNameField");
-        _startGameButton = root.Q<UnityEngine.UIElements.Button>("StartGameButton");
+        _startGameButton = root.Q<Button>("StartGameButton");
 
-        _startGameButton.enabledSelf = false;
+        _startGameButton.enabledSelf = false; 
+        PhotonNetwork.AutomaticallySyncScene = true;
 
         _startGameButton.clicked += JoinRoom;
     }

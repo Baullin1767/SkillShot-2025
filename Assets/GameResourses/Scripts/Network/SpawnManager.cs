@@ -13,7 +13,8 @@ public class SpawnManager : MonoBehaviour
     {
         if (PhotonNetwork.IsConnectedAndReady && PhotonNetwork.InRoom)
         {
-            Vector3 spawnPos = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+            int playerIndex = PhotonNetwork.LocalPlayer.ActorNumber % spawnPoints.Length;
+            Vector3 spawnPos = spawnPoints[playerIndex].transform.position;
             GameObject playerGO = PhotonNetwork.Instantiate("Player", spawnPos, Quaternion.identity);
 
             _container.InjectGameObject(playerGO);
